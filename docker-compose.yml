@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  song-splitter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # The command should be specified when running.
+    # The default command shows the application's help message.
+    command: ["--help"]
+    volumes:
+      # Mount the current directory on the host to /data in the container.
+      # This makes your input file and tracklist.txt available to the application,
+      # and the 'output' directory will be created on your host machine.
+      - .:/data
